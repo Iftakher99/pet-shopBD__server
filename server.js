@@ -10,13 +10,7 @@ const path = require('path');
 const app = express();
 
 // CORS configuration
-app.use(
-  cors({
-    origin: ['http://localhost:3000', 'https://petshopbd.netlify.app'], // Add additional origins as needed
-    methods: ['GET', 'POST', 'OPTIONS', 'PATCH', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
-  }),
-);
+app.use(cors());
 
 // Static file serving for images
 app.use('/images', express.static(path.join(__dirname, 'images')));
